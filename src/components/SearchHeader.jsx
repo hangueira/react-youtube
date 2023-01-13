@@ -15,19 +15,20 @@ export default function SearchHeader() {
   useEffect(() => setText(keyword || ""), [keyword]);
 
   return (
-    <header>
-      <Link to="/">
-        <FaYoutube />
-        <h1>YouTube</h1>
+    <header className="w-full flex p-4 text-2xl border-b border-zinc-600 mb-4 ">
+      <Link to="/" className="flex items-center">
+        <FaYoutube className="text-4xl text-brand" />
+        <h1 className="fond-bold ml-2 text-3xl">YouTube</h1>
       </Link>
-      <form onSubmit={handleSubmit}>
+      <form className="w-full flex justify-center" onSubmit={handleSubmit}>
         <input
+          className="w-7/12 p-2 outline-none bg-black text-gray-50"
           type="text"
           placeholder="검색할 내용을 입력하세요."
           value={text}
           onChange={handleChange}
         />
-        <button>
+        <button className="bg-zinc-600 px-4">
           <FaSearch />
         </button>
       </form>
